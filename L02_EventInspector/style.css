@@ -1,0 +1,48 @@
+html body {
+    background:linear-gradient(#eb5252, #2b2a2a);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    height: 100%;
+    margin: 0px;
+
+}
+
+h1 {
+    text-align: center;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.layout {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.div0 {
+    position: relative;
+    border: thick solid black;
+    background-color: rgb(255, 251, 251);
+    top: 0px;
+    right: 20px;
+    height: 500px;
+    width: 400px;
+    margin: 5px;
+
+}
+
+.div1 {
+    position: relative;
+    background-color: rgb(255, 251, 251);
+    border: thick solid black;
+    top: 0px;
+    left: 20px;
+    height: 500px;
+    width: 400px;
+    margin: 5px;
+}
+
+span {
+    position: fixed;
+    background-color: rgb(190, 190, 190);
+}
