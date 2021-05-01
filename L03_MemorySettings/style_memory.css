@@ -1,0 +1,59 @@
+body {
+    background-image: url(Bilder/memory_background.jpg);
+    color: white;
+    justify-content: center; 
+    align-items: center;
+    display: grid;
+    font-family: Arial, Helvetica, sans-serif;
+ }
+
+img{
+    position: relative;
+    float: inline-start;
+    width: 50%;
+    height: 100%;
+    top: 0px;
+}
+
+.flex{
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
+.game {
+    margin: 0 auto;
+	text-align: center;
+    background-color: #000000;
+    height: 650px;
+    width: 1200px;
+}
+
+.front {
+    margin: 2%;
+    float: left;
+}
+
+.hidden {
+	cursor: pointer;
+}
+
+.hidden p{
+    display: none;
+}
+
+.visible {
+    visibility: hidden;
+}
+
+.visible p {
+    display: none;
+}
+
+button {
+    background-color: white;
+    text-align: center;
+    border-radius: 10px;
+    height: 25px;
+    width: 100px;
+}
