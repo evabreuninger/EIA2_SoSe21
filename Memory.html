@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="style_memory.css">
+		<script type="text/javascript" src="script_memory.js"></script>
+        <title>Memory Game Eva</title>
+	</head>
+
+<body>
+    <div class="flex">
+        <img src="Bilder/memory_title.png" alt="Memory Game">
+    </div>
+    <form action="index.html" method="post">
+    <div class="game">
+    <h2>Game Settings</h2>
+
+        <div id="CardAmount">
+        <p>Choose a number for the amount of pairs (5-25):</p>
+        <input type="number" name="NrPairs" placeholder="5" min="5" max="25" step="1" id="number">
+        </div> <br>
+
+        <div id="CardSize">
+        <p>Choose the size of cards:</p>
+        <input type="range" name="SzCards" min="50" max="70" step="1" id="slider"/>
+        </div> <br>
+
+        <div id="Background">
+        <p>Choose backgroundcolor:</p>
+        <input type="color" name="CoBground" placeholder="green" id="color1" value="#000000">
+        </div><br>
+
+        <div id="CardColor">
+        <p>Choose color of the cards:</p>
+        <input type="color" name="CoCard" placeholder="green" id="color2" value="#db5252">
+        </div><br>
+
+        <div id="FontColor">
+        <p>Choose color of the letters:</p>
+        <input type="color" name="CoFont" placeholder="green" id="color3" value="#ffffff">
+        </div><br>
+
+        <div id="FontStyle">
+        <p>Choose font</p>
+        <input type="radio" name="Radiogroup" checked value="Arial" class="radio" />
+        <label for="radio">Arial</label>
+        <input type="radio" name="Radiogroup" value="Lucida Sans" class="radio" />
+        <label for="radio">Lucida Sans</label>
+        <input type="radio" name="Radiogroup" value="Times New Roman" class="radio" />
+        <label for="radio">Times New Roman</label>
+        </div><br>
+        <br>
+
+        <button id="startButton" name="startButton">start Game</button>
+
+    </div>
+    </form>
+        
+    </body>
+</html>
