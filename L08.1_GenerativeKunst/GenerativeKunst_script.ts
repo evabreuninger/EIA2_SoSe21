@@ -1,4 +1,5 @@
 namespace L08_GenerativeKunst {
+    
     window.addEventListener("load", handleLoad);
 
     function handleLoad(): void {
@@ -22,6 +23,7 @@ namespace L08_GenerativeKunst {
         let pickColor: number = Math.floor(Math.random() * Math.floor(6));
         let pickColorText: number = Math.floor(Math.random() * Math.floor(2));
 
+        //Kreise
         crc2.beginPath();
         crc2.arc( x, y, 190, 0, 2 * Math.PI , false);
         crc2.fillStyle = colors[pickColor];
@@ -29,6 +31,7 @@ namespace L08_GenerativeKunst {
         crc2.fill();
         crc2.stroke();
       
+        //Linien
         crc2.beginPath();
         crc2.strokeStyle = colors[pickColor];
         crc2.moveTo(x, y);
@@ -37,18 +40,13 @@ namespace L08_GenerativeKunst {
         crc2.closePath();
         crc2.stroke();   
 
+        //Text
         crc2.fillStyle = textColors[pickColorText];
         crc2.strokeStyle = textColors[pickColorText];
         crc2.lineWidth = 3;
-        crc2.font = "90px verdana";
+        crc2.font = "90px fantasy";
         crc2.fillText("Canvas", x, y);
         crc2.strokeText("Canvas", x2, y2);
     }
-}
-
-
-
-
-
 }
 }
