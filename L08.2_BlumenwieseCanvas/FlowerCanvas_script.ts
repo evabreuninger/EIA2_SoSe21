@@ -1,4 +1,4 @@
-// Inspiriert bei Jirka
+//inspired by Jirka
 namespace L08_2_FlowerCanvas {
     interface Vector {
         x: number;
@@ -17,12 +17,11 @@ namespace L08_2_FlowerCanvas {
 
         drawBackground();
         drawSun({x: 100, y: 75});
-        drawCloud({x: 500, y: 125}, {x: 200, y: 60});
+        drawCloud({x: 500, y: 125}, {x: 200, y: 50});
         drawMountains({x: -500, y: 400}, 75, 200, "grey", "white");
         drawMountains({x: -500, y: 400}, 50, 150, "grey", "lightgrey");
         drawBush({x: -300, y: 500}, {x: 50, y: 40});
-        drawBush({x: 0, y: 550}, {x: 50, y: 40});
-        drawTulip(0, 400);
+        drawFlowers({x: -200, y: -50});
     }
 
     function drawBackground(): void {
@@ -60,7 +59,7 @@ namespace L08_2_FlowerCanvas {
         console.log("Cloud", _position, _size);
 
         let nParticles: number = 60;
-        let radiusParticle: number = 20;
+        let radiusParticle: number = 30;
         let particle: Path2D = new Path2D();
         let gradient: CanvasGradient = crc2.createRadialGradient(0, 0, 0, 0, 0, radiusParticle);
 
@@ -140,35 +139,43 @@ namespace L08_2_FlowerCanvas {
             crc2.restore();
         }
     }
-
-    function drawTulip(_x: number, _y: number): void {
-
-        //Stiel
+    //Blüten inspiriert von Karen Josten
+    function drawFlowers(_position: Vector): void {
+        for (var nFlowers: number = 0; nFlowers < 15; nFlowers++) {
+        let randomX: number = 1000 * Math.random();
+        let randomY: number = 270 * Math.random();
+        
+        //Blumestiel
         crc2.beginPath();
-        crc2.fillStyle = "HSLA(60, 100%, 50%, 0)";
-
-        crc2.fillRect(_x + 9, _y + 28, 3, 40);
+        crc2.rect(_position.x + randomX, _position.y + randomY, 5, 50); 
+        crc2.fillStyle = "green";
+        crc2.fill();
+        crc2.closePath();
 
         //Blatt
-        crc2.arc(_x + 8, _y + 30, 20, 0, 1.5);
-
-        crc2.fill();
-
-        //Blüte
         crc2.beginPath();
-        crc2.fillStyle = "#FF1493";
-
-        crc2.arc(_x + 10, _y + 20, 10, 0, 1 * Math.PI);
-        crc2.moveTo(_x, _y + 22);
-        crc2.lineTo(_x, _y + 7);
-        crc2.lineTo(_x + 6, _y + 14);
-        crc2.lineTo(_x + 10.5, _y + 4);
-        crc2.lineTo(_x + 15, _y + 14);
-        crc2.lineTo(_x + 20, _y + 7);
-        crc2.lineTo(_x + 20, _y + 21);
-
-        crc2.closePath();
+        crc2.arc(_position.x + 14 + randomX, _position.y + 32 + randomY, 8, 0, 1 * Math.PI); 
+        crc2.fillStyle = "green";
         crc2.fill();
+        crc2.closePath();
+
+        //Blüten
+        crc2.beginPath();
+        crc2.arc(_position.x + 10 + randomX, _position.y + randomY, 10, 0, 2 * Math.PI);
+        crc2.arc(_position.x + randomX, _position.y + 10 + randomY, 10, 0, 2 * Math.PI);
+        crc2.arc(_position.x - 10 + randomX, _position.y + randomY, 10, 0, 2 * Math.PI);
+        crc2.arc(_position.x + randomX, _position.y - 10 + randomY, 10, 0, 2 * Math.PI);
+        crc2.fillStyle = "red";
+        crc2.fill();
+        crc2.closePath();
+
+        //Blumenmitte
+        crc2.beginPath();
+        crc2.arc(_position.x + randomX, _position.y + randomY, 8, 0, 2 * Math.PI);
+        crc2.fillStyle = "yellow";
+        crc2.fill();
+        crc2.closePath();
+    }
     }
 
 }
