@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
+    "img song next"
+    "img food next"
+    "img inventory next"
+    ;
+    background: #eee;
+
+}
+#img {
+    position: relative;
+    grid-area: img;
+    width: 100%;
+    z-index: 2;
+}
+
+#song, #food, #inventory, #next {
+    margin: 5px;
+    text-align: center;
+    font-size: 23px;
+}
+
+#song {
+    grid-area: song;
+    padding: 5px;
+}
+
+#food {
+    grid-area: food;
+}
+
+#inventory {
+    grid-area: inventory;
+}
+
+#next {
+    grid-area: next;
+    height: 70px;
+    background-color: #555;
+    color: white;
+    font-weight: 700;
+}
+
+#next:hover {
+    background-color: #444;
+}
