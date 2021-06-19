@@ -25,7 +25,7 @@ var eia11_1;
             for (let flower of this.flowers) {
                 flower.draw();
             }
-            for (let i = 0; i < this.flowers.length; i++) {
+            for (let i = 1; i < this.flowers.length; i++) {
                 this.flowers[i].nectarBar();
             }
             for (let tree of this.trees) {

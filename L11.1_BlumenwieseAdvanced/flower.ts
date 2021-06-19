@@ -5,14 +5,16 @@ namespace eia11_1 {
         color: string;
         nectarLevel: number;
         maxLevel: number;
+        timeout: number;
 
         constructor(x: number, y: number, height: number) {
             super(x, y, height);
             this.type = Math.round(Math.random() + 1);
             this.scale = Math.random() * 4 + 10;
             this.color = "rgb(" + Math.random() * 255 + "," + Math.random() * 255 + "," + Math.random() * 255 + ")";
-            this.nectarLevel = Math.random() * 5;
+            this.nectarLevel = Math.random() * 4;
             this.maxLevel = this.maxLevel;
+            this.timeout = this.timeout;
         }
 
         draw(): void {
@@ -31,7 +33,7 @@ namespace eia11_1 {
 
             //Nektar-Balken
             c.beginPath();
-            c.fillStyle = "rgb(0, 0, 0)";
+            c.fillStyle = "HSLA(0, 0%, 0%, 0.4)";
             c.fillRect(this.x + 10, this.y, 6, - this.nectarLevel);
             c.closePath();
 
@@ -51,7 +53,7 @@ namespace eia11_1 {
 
             //Nektar-Balken
             c.beginPath();
-            c.fillStyle = "rgb(0, 0, 0)";
+            c.fillStyle = "HSLA(0, 0%, 0%, 0.4)";
             c.fillRect(this.x + 10, this.y, 6, - this.nectarLevel);
             c.closePath();
 
@@ -66,11 +68,12 @@ namespace eia11_1 {
                 c.fill();
             }  
         }
-
-        nectarBar(): void {
-            if (this.nectarLevel < 50)
-                this.nectarLevel += this.maxLevel;
-            this.draw();
+            nectarBar(): void {
+                if (this.nectarLevel < 30)
+                this.nectarLevel++;
+                this.draw();
+                //Interval für Balken animation fehlt noch
         }
+    
     }
 }

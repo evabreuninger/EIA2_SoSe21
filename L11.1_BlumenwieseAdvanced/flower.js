@@ -7,13 +7,15 @@ var eia11_1;
         color;
         nectarLevel;
         maxLevel;
+        timeout;
         constructor(x, y, height) {
             super(x, y, height);
             this.type = Math.round(Math.random() + 1);
             this.scale = Math.random() * 4 + 10;
             this.color = "rgb(" + Math.random() * 255 + "," + Math.random() * 255 + "," + Math.random() * 255 + ")";
-            this.nectarLevel = Math.random() * 5;
+            this.nectarLevel = Math.random() * 4;
             this.maxLevel = this.maxLevel;
+            this.timeout = this.timeout;
         }
         draw() {
             switch (this.type) {
@@ -31,7 +33,7 @@ var eia11_1;
             eia11_1.c.fillRect(this.x, this.y, 6, -this.height);
             //Nektar-Balken
             eia11_1.c.beginPath();
-            eia11_1.c.fillStyle = "rgb(0, 0, 0)";
+            eia11_1.c.fillStyle = "HSLA(0, 0%, 0%, 0.4)";
             eia11_1.c.fillRect(this.x + 10, this.y, 6, -this.nectarLevel);
             eia11_1.c.closePath();
             eia11_1.c.beginPath();
@@ -48,7 +50,7 @@ var eia11_1;
             eia11_1.c.fillRect(this.x, this.y, 6, -this.height);
             //Nektar-Balken
             eia11_1.c.beginPath();
-            eia11_1.c.fillStyle = "rgb(0, 0, 0)";
+            eia11_1.c.fillStyle = "HSLA(0, 0%, 0%, 0.4)";
             eia11_1.c.fillRect(this.x + 10, this.y, 6, -this.nectarLevel);
             eia11_1.c.closePath();
             eia11_1.c.beginPath();
@@ -63,9 +65,10 @@ var eia11_1;
             }
         }
         nectarBar() {
-            if (this.nectarLevel < 50)
-                this.nectarLevel += this.maxLevel;
+            if (this.nectarLevel < 30)
+                this.nectarLevel++;
             this.draw();
+            //Interval für Balken animation fehlt noch
         }
     }
     eia11_1.Flower = Flower;
