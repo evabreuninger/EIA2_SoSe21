@@ -1,10 +1,10 @@
-namespace eia10_2 {
+namespace eia11_1 {
 
     /*
-    Aufgabe: L10.2_BlumenwiesePolymorphie
+    Aufgabe: L11.1_BlumenwiesePolymorphie
     Name: Eva Breuninger
     Matrikel: 266825
-    Datum: 14.06.2021
+    Datum: 19.06.2021
     Quellen: Larissa Gaede, Maximilian Buckel
     */
 

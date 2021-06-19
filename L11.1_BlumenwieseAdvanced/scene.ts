@@ -1,9 +1,9 @@
-namespace eia10_2 {
+namespace eia11_1 {
     export class Scene {
         mountain: Mountain;
         mountain2: Mountain;
         animated: Animated[];
-        flowers: Flower[]; 
+        flowers: Flower[];
         trees: Tree[];
         timeScale: number;
 
@@ -24,6 +24,9 @@ namespace eia10_2 {
             this.mountain2.draw();
             for (let flower of this.flowers) {
                 flower.draw();
+            }
+            for (let i: number = 0; i < this.flowers.length; i++) {
+                this.flowers[i].nectarBar();
             }
             for (let tree of this.trees) {
                 tree.draw();
@@ -53,13 +56,14 @@ namespace eia10_2 {
             }
             this.sortTrees(this.trees);
         }
+
         makeFlowers(): void {
             this.flowers = [];
             for (let i: number = 0; i < 200; i++) {
                 this.flowers.push(new Flower(Math.random() * canvas.width, Math.random() * 1050 + 460, Math.random() * 15 + 30));
             }  
         }
-
+    
         sortTrees(trees: Tree[]): void {
             let temp: number[] = [];
             for (let i: number = 0; i < trees.length; i++) {

@@ -1,4 +1,4 @@
-namespace eia10_2 {
+namespace eia11_1 {
     export class Cloud extends AnimationType1 {
         sizeX: number;
 

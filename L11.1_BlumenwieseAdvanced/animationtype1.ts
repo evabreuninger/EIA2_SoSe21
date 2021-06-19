@@ -1,5 +1,5 @@
-namespace eia10_2 {
-    export class AnimationType1 extends Animated {
+namespace eia11_1 {
+    export abstract class AnimationType1 extends Animated {
         x: number;
         y: number;
         vX: number;

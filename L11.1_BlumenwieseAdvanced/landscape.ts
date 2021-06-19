@@ -1,5 +1,5 @@
-namespace eia10_2 {
-    export class Landscape {
+namespace eia11_1 {
+    export abstract class Landscape {
         x: number;
         y: number;
         height: number;

@@ -1,6 +1,7 @@
-var eia10_2;
-(function (eia10_2) {
-    eia10_2.canvas = document.getElementById("canvas");
-    eia10_2.c = eia10_2.canvas.getContext("2d");
-})(eia10_2 || (eia10_2 = {}));
+"use strict";
+var eia11_1;
+(function (eia11_1) {
+    eia11_1.canvas = document.getElementById("canvas");
+    eia11_1.c = eia11_1.canvas.getContext("2d");
+})(eia11_1 || (eia11_1 = {}));
 //# sourceMappingURL=init.js.map

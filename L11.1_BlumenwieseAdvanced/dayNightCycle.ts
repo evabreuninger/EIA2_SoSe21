@@ -1,4 +1,4 @@
-namespace eia10_2 {
+namespace eia11_1 {
     export class DayNightCycle extends Animated {
         static time: number;
         static total: number;

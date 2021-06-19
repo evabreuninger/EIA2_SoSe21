@@ -1,15 +1,18 @@
-namespace eia10_2 {
+namespace eia11_1 {
     export class Flower extends Landscape {
         type: number;
         scale: number;
         color: string;
+        nectarLevel: number;
+        maxLevel: number;
 
         constructor(x: number, y: number, height: number) {
             super(x, y, height);
             this.type = Math.round(Math.random() + 1);
             this.scale = Math.random() * 4 + 10;
             this.color = "rgb(" + Math.random() * 255 + "," + Math.random() * 255 + "," + Math.random() * 255 + ")";
-
+            this.nectarLevel = Math.random() * 5;
+            this.maxLevel = this.maxLevel;
         }
 
         draw(): void {
@@ -25,6 +28,13 @@ namespace eia10_2 {
             c.beginPath();
             c.fillStyle = "rgb(0, 150, 0)";
             c.fillRect(this.x, this.y, 6, - this.height);
+
+            //Nektar-Balken
+            c.beginPath();
+            c.fillStyle = "rgb(0, 0, 0)";
+            c.fillRect(this.x + 10, this.y, 6, - this.nectarLevel);
+            c.closePath();
+
             c.beginPath();
             let gradient: CanvasGradient = c.createRadialGradient(this.x + 3, this.y - this.height, 2, this.x + 3, this.y - this.height, this.scale);
             gradient.addColorStop(0, "rgba(255,255,255,1)");
@@ -38,6 +48,13 @@ namespace eia10_2 {
             c.beginPath();
             c.fillStyle = "rgb(0,150,0)";
             c.fillRect(this.x, this.y, 6, - this.height);
+
+            //Nektar-Balken
+            c.beginPath();
+            c.fillStyle = "rgb(0, 0, 0)";
+            c.fillRect(this.x + 10, this.y, 6, - this.nectarLevel);
+            c.closePath();
+
             c.beginPath();
             c.arc(this.x + 3, this.y - this.height, 7, 0, Math.PI * 2);
             c.fillStyle = "yellow";
@@ -48,6 +65,12 @@ namespace eia10_2 {
                 c.fillStyle = this.color;
                 c.fill();
             }  
+        }
+
+        nectarBar(): void {
+            if (this.nectarLevel < 50)
+                this.nectarLevel += this.maxLevel;
+            this.draw();
         }
     }
 }

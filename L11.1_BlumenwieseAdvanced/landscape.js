@@ -1,14 +1,17 @@
-var eia10_2;
-(function (eia10_2) {
-    var Landscape = /** @class */ (function () {
-        function Landscape(x, y, height) {
+"use strict";
+var eia11_1;
+(function (eia11_1) {
+    class Landscape {
+        x;
+        y;
+        height;
+        constructor(x, y, height) {
             this.x = x;
             this.y = y;
             this.height = height;
         }
-        Landscape.prototype.draw = function () { };
-        return Landscape;
-    }());
-    eia10_2.Landscape = Landscape;
-})(eia10_2 || (eia10_2 = {}));
+        draw() { }
+    }
+    eia11_1.Landscape = Landscape;
+})(eia11_1 || (eia11_1 = {}));
 //# sourceMappingURL=landscape.js.map

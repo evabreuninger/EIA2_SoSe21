@@ -1,10 +1,18 @@
-var eia10_2;
-(function (eia10_2) {
-    var timeScale = 0.005;
-    var scene = new eia10_2.Scene(timeScale);
+"use strict";
+var eia11_1;
+(function (eia11_1) {
+    /*
+    Aufgabe: L11.1_BlumenwiesePolymorphie
+    Name: Eva Breuninger
+    Matrikel: 266825
+    Datum: 19.06.2021
+    Quellen: Larissa Gaede, Maximilian Buckel
+    */
+    let timeScale = 0.005;
+    let scene = new eia11_1.Scene(timeScale);
     setInterval(updateAll, 30);
     function updateAll() {
         scene.update();
     }
-})(eia10_2 || (eia10_2 = {}));
+})(eia11_1 || (eia11_1 = {}));
 //# sourceMappingURL=script.js.map

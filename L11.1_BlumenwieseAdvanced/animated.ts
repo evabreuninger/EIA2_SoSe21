@@ -1,5 +1,5 @@
-namespace eia10_2 {
-    export class Animated {
+namespace eia11_1 {
+    export abstract class Animated {
         update(): void {}
         draw(): void {}
     }

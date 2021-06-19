@@ -1,4 +1,4 @@
-namespace eia10_2 {
+namespace eia11_1 {
     export class Bee extends AnimationType1 {
         time: number;
         changeTime: number;
