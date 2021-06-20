@@ -23,7 +23,7 @@ namespace eia11_1 {
             this.mountain.draw(); 
             this.mountain2.draw();
             for (let flower of this.flowers) {
-                flower.draw();
+                flower.draw(); 
             }
             for (let i: number = 1; i < this.flowers.length; i++) {
                 this.flowers[i].nectarBar();

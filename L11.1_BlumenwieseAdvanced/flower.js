@@ -6,16 +6,14 @@ var eia11_1;
         scale;
         color;
         nectarLevel;
-        maxLevel;
-        timeout;
+        i;
         constructor(x, y, height) {
             super(x, y, height);
             this.type = Math.round(Math.random() + 1);
             this.scale = Math.random() * 4 + 10;
             this.color = "rgb(" + Math.random() * 255 + "," + Math.random() * 255 + "," + Math.random() * 255 + ")";
             this.nectarLevel = Math.random() * 4;
-            this.maxLevel = this.maxLevel;
-            this.timeout = this.timeout;
+            this.i = 0;
         }
         draw() {
             switch (this.type) {
@@ -65,10 +63,25 @@ var eia11_1;
             }
         }
         nectarBar() {
-            if (this.nectarLevel < 30)
-                this.nectarLevel++;
-            this.draw();
-            //Interval für Balken animation fehlt noch
+            if (this.i == 0) {
+                this.i = 1;
+                let id;
+                const frame = () => {
+                    if (this.nectarLevel >= 30) {
+                        clearInterval(id);
+                        this.i = 0;
+                        this.nectarLevel = Math.random() * 4;
+                    }
+                    else {
+                        this.nectarLevel++;
+                    }
+                };
+                let interval = 300;
+                if (this.type == 2) {
+                    interval = 400;
+                }
+                id = setInterval(frame, interval);
+            }
         }
     }
     eia11_1.Flower = Flower;

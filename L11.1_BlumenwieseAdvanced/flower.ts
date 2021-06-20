@@ -4,8 +4,7 @@ namespace eia11_1 {
         scale: number;
         color: string;
         nectarLevel: number;
-        maxLevel: number;
-        timeout: number;
+        i: number;
 
         constructor(x: number, y: number, height: number) {
             super(x, y, height);
@@ -13,16 +12,15 @@ namespace eia11_1 {
             this.scale = Math.random() * 4 + 10;
             this.color = "rgb(" + Math.random() * 255 + "," + Math.random() * 255 + "," + Math.random() * 255 + ")";
             this.nectarLevel = Math.random() * 4;
-            this.maxLevel = this.maxLevel;
-            this.timeout = this.timeout;
+            this.i = 0;
         }
 
         draw(): void {
             switch (this.type) {
                 case 1: this.flowerType1();
-                        break;
+                    break;
                 case 2: this.flowerType2();
-                        break;
+                    break;
             }
         }
 
@@ -63,17 +61,36 @@ namespace eia11_1 {
             c.fill();
             for (let i: number = 1; i <= 8; i++) {
                 c.beginPath();
-                c.arc(this. x + 3 + Math.cos((Math.PI * 2) / 8 * i) * 12, this.y - this.height + Math.sin((Math.PI * 2) / 8 * i) * 12, 7, 0, Math.PI * 2);
+                c.arc(this.x + 3 + Math.cos((Math.PI * 2) / 8 * i) * 12, this.y - this.height + Math.sin((Math.PI * 2) / 8 * i) * 12, 7, 0, Math.PI * 2);
                 c.fillStyle = this.color;
                 c.fill();
-            }  
+            }
         }
-            nectarBar(): void {
-                if (this.nectarLevel < 30)
-                this.nectarLevel++;
-                this.draw();
-                //Interval für Balken animation fehlt noch
+
+
+        nectarBar(): void {
+            if (this.i == 0) {
+                this.i = 1;
+                let id: number;
+            
+                const frame = (): void => {
+                    if (this.nectarLevel >= 30) {
+                    clearInterval(id);
+                    this.i = 0;
+                    this.nectarLevel = Math.random() * 4;
+                } else {
+                    this.nectarLevel++;
+                }};
+
+                let interval: number = 300;
+                if (this.type == 2) {
+                    interval = 400;
+                }
+
+
+                id = setInterval(frame, interval);
         }
-    
     }
 }
+}
+
